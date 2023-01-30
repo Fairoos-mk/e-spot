@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../main.dart';
+import 'data.dart';
 
 class homepage extends StatefulWidget {
   String Username;
@@ -17,21 +18,31 @@ class _homepageState extends State<homepage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('home screen'),
-      ),
+    backgroundColor: Colors.black,
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
-        child: Column(
-          children: [
-            Text(widget.Username),
-            Text(widget.Password),
-
-          ],
+        child: Container(
+          margin: EdgeInsets.all(30.0),
+          width: double.infinity,
+          child: TextButton(
+            onPressed: () {
+              print('Login');
+              Navigator.push(context, MaterialPageRoute(builder: (_)=> Data()));
+            },
+            child: Text(
+              'E-Spot',
+              style:
+              TextStyle(color: Colors.black),
+            ),
+          ),
+          decoration: BoxDecoration(
+            color: Colors.green[900],
+            borderRadius: BorderRadius.circular(30.0),
+          ),
         ),
+
       ), drawer: Drawer(
       child: ListView(
-        // Important: Remove any padding from the ListView.
         padding: EdgeInsets.zero,
         children: <Widget>[
           UserAccountsDrawerHeader(

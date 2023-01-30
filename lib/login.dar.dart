@@ -55,7 +55,22 @@ class _LoginFormState extends State<LoginForm> {
               SizedBox(height: 5.0,),
               getTextFormField(icon: Icons.password,
                 hindName: 'password', controller: _conpassword,),
-
+          Container(
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                TextButton(
+                  onPressed: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (_)=> SignupFom()));
+                    print('Forgotpassword');
+                  },
+                  child:Text(
+                    'Forgotpassword',
+                    style:
+                    TextStyle(color: Colors.white ),
+                  ),)
+              ],
+            ),),
               Container(
                 margin: EdgeInsets.all(30.0),
                 width: double.infinity,
@@ -87,27 +102,8 @@ class _LoginFormState extends State<LoginForm> {
                 ),
               ),
 
-              Container(
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text('Forgot your login details?'),
-                    TextButton(
-                      onPressed: () {
-                        Navigator.push(context, MaterialPageRoute(builder: (_)=> SignupFom()));
-                        print('Forgotpassword');
-                      },
-                      child:Text(
-                        'Forgotpassword',
-                        style:
 
 
-
-                        TextStyle(color: Colors.white ),
-                      ),)
-                  ],
-                ),
-              ),
               SizedBox(height: 120.0,),
               Container(
                 child: Row(
