@@ -1,3 +1,4 @@
+import 'package:e_spot/list.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -34,64 +35,12 @@ class e_spot extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Container(
-                  padding: EdgeInsets.all(10),
-                  decoration: BoxDecoration(
-                    color: Color(0XFFD4ECF7),
-                    borderRadius: BorderRadius.circular(10),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.black12,
-                        blurRadius: 4,
-                        spreadRadius: 2,
-                      ),
-                    ],
-                  ),
-                  child: Icon(CupertinoIcons.cart,size: 28),
-                ),
-                Container(
-                  padding: EdgeInsets.all(10),
-                  decoration: BoxDecoration(
-                    color: Color(0XFFD4ECF7),
-                    borderRadius: BorderRadius.circular(10),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.black12,
-                        blurRadius: 4,
-                        spreadRadius: 2,
-                      ),
-                    ],
-                  ),
-                  child: Icon(CupertinoIcons.search,size: 28),
-
-
-                ),
               ],
             ),
           ),
-          Padding(
-            padding: EdgeInsets.symmetric(vertical: 25,horizontal: 15),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  "Hello Dear",
-                  style: TextStyle(
-                    fontSize: 25,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                SizedBox(height: 5),
-                Text(
-                  "Lets Shop Somthing!",
-                  style: TextStyle(
-                    fontSize: 18,
-                    color: Colors.black45,
-                  ),
-                ),
-              ],
-            ),
-          ),
+         SizedBox(
+           height: 30,
+         ),
           SingleChildScrollView(
             scrollDirection: Axis.horizontal,
             padding: EdgeInsets.only(left: 15),
@@ -116,26 +65,27 @@ class e_spot extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                "30% Off On Winter Collection",
+                                "Special Offers",
                                 style: TextStyle(
                                   color: Colors.white,
-                                  fontSize: 18,
+                                  fontSize: 15,
                                 ),
                               ),
                               Container(
-                                height: 40,
-                                width: 200,
-                                padding: EdgeInsets.all(10),
+                                height: 33,
+                                width: 70,
+                                padding: EdgeInsets.all(5),
                                 decoration: BoxDecoration(
                                   color: Colors.white,
                                   borderRadius: BorderRadius.circular(20),
                                 ),
                                 child: Center(
                                   child: Text(
-                                    "Shop Now",
+                                    "Buy",
                                     style: TextStyle(
                                       color: Colors.redAccent,
                                       fontWeight: FontWeight.bold,
+                                      fontSize: 15,
                                     ),
                                   ),
                                 ),
@@ -145,8 +95,8 @@ class e_spot extends StatelessWidget {
                         ),
                         Image.asset(
                           imageList[i],
-                          height: 180,
-                          width: 110,
+                          height: 190,
+                          width: 130,
                         ),
                       ],
                     ),
@@ -154,62 +104,8 @@ class e_spot extends StatelessWidget {
               ],
             ),
           ),
-          SizedBox(height: 20),
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 15),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                  "Top Categories",
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 18,
-                  ),
-                ),
-                Text(
-                  "See All",
-                  style: TextStyle(
-                    color: Colors.black54,
-                  ),
-                ),
-              ],
-            ),
-          ),
-          SizedBox(height: 20),
-          SingleChildScrollView(
-            scrollDirection: Axis.horizontal,
-            child: Padding(
-              padding: EdgeInsets.only(left: 10),
-              child: Row(
-                children: [
-                  for(var i=0;i<7;i++)
-                    Container(
-                      height: 50,
-                      width: 50,
-                      margin: EdgeInsets.all(8),
-                      decoration: BoxDecoration(
-                        color: Color(0XFFD4ECF7),
-                        borderRadius: BorderRadius.circular(10),
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.black26,
-                            blurRadius: 4,
-                            spreadRadius: 2,
-                          ),
-                        ],
-                      ),
-                      child: Padding(
-                        padding: EdgeInsets.all(6),
-                        child: Image.asset(iconImageList[i]),
-                      ),
-                    ),
-                ],
-              ),
-            ),
-          ),
           SizedBox(height: 10),
-
+          GridItems()
         ],
       ),
     );
