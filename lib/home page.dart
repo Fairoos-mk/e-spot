@@ -1,3 +1,4 @@
+import 'package:e_spot/e_spot.dart';
 import 'package:flutter/material.dart';
 
 import '../main.dart';
@@ -27,7 +28,7 @@ class _homepageState extends State<homepage> {
           child: TextButton(
             onPressed: () {
               print('Login');
-              Navigator.push(context, MaterialPageRoute(builder: (_)=> Data()));
+              Navigator.push(context, MaterialPageRoute(builder: (_)=> e_spot()));
             },
             child: Text(
               'E-Spot',
